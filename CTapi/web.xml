@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+   <!-- To save as "hello\WEB-INF\web.xml" -->
+ 
+  <!-- 
+   <servlet>
+      <servlet-name>Initialize</servlet-name>
+      <servlet-class>servlet.Initialize</servlet-class>
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+ -->
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+ <!--
+   <servlet-mapping>
+      <servlet-name>Initialize</servlet-name>
+      <url-pattern>/Initialize</url-pattern>
+   </servlet-mapping>
+ -->   
+   
+    <servlet>
+      <servlet-name>CTstringInputFile</servlet-name>
+      <servlet-class>fr.erias.ctapi.servlet.CTstringInputFile</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>CTstringInputFile</servlet-name>
+      <url-pattern>/CTstringInputFile</url-pattern>
+   </servlet-mapping>
+   
+   
+      
+    <servlet>
+      <servlet-name>CTstringInputBody</servlet-name>
+      <servlet-class>fr.erias.ctapi.servlet.CTstringInputBody</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>CTstringInputBody</servlet-name>
+      <url-pattern>/CTstringInputBody</url-pattern>
+   </servlet-mapping>
+   
+   
+    <!-- A get method to check connection -->
+   
+   <servlet>
+      <servlet-name>CheckConnection</servlet-name>
+      <servlet-class>fr.erias.ctapi.servlet.CheckConnection</servlet-class>
+   </servlet>
+ 
+   <servlet-mapping>
+      <servlet-name>CheckConnection</servlet-name>
+      <url-pattern>/CheckConnection</url-pattern>
+   </servlet-mapping>
+   
+   
+   
+    <!-- A post method to retrieve a lemmaTerm -->
+   
+   <servlet>
+      <servlet-name>PostLemmaTerm</servlet-name>
+      <servlet-class>fr.erias.ctapi.servlet.PostLemmaTerm</servlet-class>
+   </servlet>
+ 
+   <servlet-mapping>
+      <servlet-name>PostLemmaTerm</servlet-name>
+      <url-pattern>/PostLemmaTerm</url-pattern>
+   </servlet-mapping>
+ 
+</web-app>
