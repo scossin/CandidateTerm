@@ -1,0 +1,14 @@
+version: '3'
+
+services:  
+   tomcat:
+    image: tomcat:8.5
+    container_name: ${TOMCAT_CONTAINER_NAME}
+    ports: 
+     - ${TOMCAT_PORT}:8080
+    volumes: 
+     - ./CTapi/target:/usr/local/tomcat/webapps
+     - ./TreeTagger:/opt/TreeTagger
+     - ./logs:/usr/local/tomcat/logs
+    environment: 
+     - TREETAGGER_HOME=/opt/TreeTagger
