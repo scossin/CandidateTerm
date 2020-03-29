@@ -128,7 +128,6 @@ public class ProcessText implements CTjson {
 		JSONArray jsonArrayCT = new JSONArray();
 		JSONArray jsonArraySentences = new JSONArray();
 		for (Sentence sentence : this.sentenceSegmentation.getSentences()) {
-			logger.info("processing sentence : " + sentence.getContent());
 			candidateTermsLemmaExtraction.extractCandidateTerm(sentence);
 			jsonArrayCT = getJsonCT(jsonArrayCT,candidateTermsLemmaExtraction.getCandidateTermsLemma(), sentence);
 			jsonArraySentences = getJsonSentence(jsonArraySentences, sentence);

@@ -72,6 +72,7 @@ public class TreeTaggerPOS {
 		// in the "bin" subdirectory : "treetagger/bin/tree-tagger"
 		this.treeTaggerPath = treeTaggerPath;
 		this.treeTaggerModelFile = treeTaggerModelFile;
+		logger.info("TreeTaggerPath: " + treeTaggerPath);
 		System.setProperty("treetagger.home", treeTaggerPath);
 		treeTaggerWrapper = new TreeTaggerWrapper<String>();
 		treeTaggerWrapper.setModel(treeTaggerModelFile);
