@@ -74,7 +74,10 @@ public class TokenizerOpenNLP implements Tokenizer {
 	 * @param sentence A string to tokenize (e.g. a sentence)
 	 */
 	public void tokenize(String sentence){
+		sentence = sentence.replace("<", "-");
+		sentence = sentence.replace(">", "-");
 		tokensArray = tokenizerME.tokenize(sentence);
+		// bug when the token contains '<' or '>', so we remove them:
 		this.sentence = sentence;
 	}
 	
