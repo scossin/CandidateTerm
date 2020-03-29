@@ -1,5 +1,9 @@
 package fr.erias.candidateterms.frResources;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import fr.erias.candidateterms.exceptions.MyExceptions;
 
 /**
  * Resources for the French. File and folders are located in src/main/resources
@@ -8,6 +12,8 @@ package fr.erias.candidateterms.frResources;
  */
 public class Resources {
 
+	final static Logger logger = LoggerFactory.getLogger(Resources.class);
+	
 	/**
 	 * folderName containing NLP models for sentence detection, tokenization...
 	 */
@@ -47,10 +53,13 @@ public class Resources {
 	
 	
 	static {
-		String treetagger_home = System.getenv("TREETAGGER_HOME");
+		
+		String treetagger_home = "/opt/TreeTagger";
 		if (treetagger_home == null) {
-			new NullPointerException("Can't find TREETAGGER_HOME environment variable");	
+			Exception e = new NullPointerException("Can't find TREETAGGER_HOME environment variable");
+			MyExceptions.logException(logger, e);
 		}
+		
 		treeTaggerPath = treetagger_home;
 		treeTaggerFrenchModelFile = treeTaggerPath + "/lib/french.par";
 	}
