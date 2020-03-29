@@ -53,8 +53,8 @@ public class Resources {
 	
 	
 	static {
-		
-		String treetagger_home = "/opt/TreeTagger";
+		String treetagger_home = System.getenv("TREETAGGER_HOME");
+		// in docker container : String treetagger_home = "/opt/TreeTagger";
 		if (treetagger_home == null) {
 			Exception e = new NullPointerException("Can't find TREETAGGER_HOME environment variable");
 			MyExceptions.logException(logger, e);
